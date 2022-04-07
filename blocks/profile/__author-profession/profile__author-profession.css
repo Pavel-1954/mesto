@@ -1,0 +1,17 @@
+.profile__author-profession {
+    margin: 8px 0 0;
+    font-size: 18px;
+    line-height: 22px;
+    max-width: 336px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+@media screen and (max-width: 540px) {
+    .profile__author-profession {
+        margin: 7px 0 0 18px;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+    }
+}

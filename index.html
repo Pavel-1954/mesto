@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mesto</title>
+    <link rel="stylesheet" href="pages/home.css">
+    <meta name="description" content="responsive and adaptive layout">
+    <meta name="keywords" content="html, css, javascript">
+    <meta name="author" content="Павел Костерин">
+</head>
+<body class="body">
+    <div class="root">
+        <header class="header">
+            <img class="header__logo" src="images/logo.svg" alt="logo">
+        </header>
+        <main class="content">
+            <section class="profile">
+                <div class="profile__info">
+                    <img class="profile__avatar" src="images/avatar.png" alt="img">
+                    <div class="profile__text">
+                        <div class="profile__author">
+                            <h1 class="profile__author-name">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button" aria-label="редактировать профиль"></button>
+                        </div>
+                        <p class="profile__author-profession">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+                <ul class="elements__items">
+                    <li class="elements__item">
+                        <img class="elements__image" src="images/karachaevsk.png" alt="img">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Карачаевск</h2>
+                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
+                        </div>
+                    </li>
+                    <li class="elements__item">
+                        <img class="elements__image" src="images/elbrus.png" alt="img">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Гора Эльбрус</h2>
+                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
+                        </div>
+                    </li>
+                    <li class="elements__item">
+                        <img class="elements__image" src="images/dombai.png" alt="img">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Домбай</h2>
+                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
+                        </div>
+                    </li>
+                    <li class="elements__item">
+                        <img class="elements__image" src="images/elbrus.png" alt="img">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Гора Эльбрус</h2>
+                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
+                        </div>
+                    </li>
+                    <li class="elements__item">
+                        <img class="elements__image" src="images/dombai.png" alt="img">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Домбай</h2>
+                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
+                        </div>
+                    </li>
+                    <li class="elements__item">
+                        <img class="elements__image" src="images/karachaevsk.png" alt="img">
+                        <div class="elements__info">
+                            <h2 class="elements__title">Карачаево-Черкессия</h2>
+                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__copyright">© 2022 Павел Костерин</p>
+        </footer>
+    </div>
+    <div class="popup">
+        <div class="popup__container">
+            <button class="popup__button-close"></button>
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form class="popup__form">
+                <input class="popup__input popup__input_type_name" placeholder="имя" value="#">
+                <input class="popup__input popup__input_type_about" placeholder="о себе" value="#">
+                <button class="popup__save-button" >Сохранить</button>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>

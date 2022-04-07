@@ -1,0 +1,9 @@
+.elements__info {
+    background-color: #FFFFFF;
+    color: #000000;
+    padding: 25px 15px 0 21px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0 0 10px 10px;
+
+}
