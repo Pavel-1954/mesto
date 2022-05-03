@@ -6,8 +6,13 @@
     background-image: url("../../../images/kursor.svg");
     background-position: center;
     background-repeat: no-repeat;
-    border: 1px solid #FFFFFF
+    border: 1px solid #FFFFFF;
+    transition: opacity 0.5s ease;
 }
+.profile__edit-button:hover {
+    opacity: 0.6;
+}
+
 @media screen and (max-width: 540px) {
     .profile__edit-button {
         margin: 12px 0 0 15px;

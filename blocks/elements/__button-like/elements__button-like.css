@@ -7,4 +7,8 @@
     background-position: center;
     background-repeat: no-repeat;
     border: none;
+    transition: opacity 0.5s ease;
+}
+.elements__button-like:hover {
+    opacity: 0.6;
 }

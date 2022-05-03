@@ -1,4 +1,5 @@
 .profile__author {
     display: flex;
+    justify-content: space-between;
     max-width: 336px;
 }

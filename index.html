@@ -30,48 +30,7 @@
             </section>
             <section class="elements">
                 <ul class="elements__items">
-                    <li class="elements__item">
-                        <img class="elements__image" src="images/karachaevsk.png" alt="img">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Карачаевск</h2>
-                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
-                        </div>
-                    </li>
-                    <li class="elements__item">
-                        <img class="elements__image" src="images/elbrus.png" alt="img">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Гора Эльбрус</h2>
-                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
-                        </div>
-                    </li>
-                    <li class="elements__item">
-                        <img class="elements__image" src="images/dombai.png" alt="img">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Домбай</h2>
-                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
-                        </div>
-                    </li>
-                    <li class="elements__item">
-                        <img class="elements__image" src="images/elbrus.png" alt="img">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Гора Эльбрус</h2>
-                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
-                        </div>
-                    </li>
-                    <li class="elements__item">
-                        <img class="elements__image" src="images/dombai.png" alt="img">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Домбай</h2>
-                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
-                        </div>
-                    </li>
-                    <li class="elements__item">
-                        <img class="elements__image" src="images/karachaevsk.png" alt="img">
-                        <div class="elements__info">
-                            <h2 class="elements__title">Карачаево-Черкессия</h2>
-                            <button class="elements__button-like" type="button" aria-label="нравится"></button>
-                        </div>
-                    </li>
+
                 </ul>
             </section>
         </main>
@@ -79,16 +38,45 @@
             <p class="footer__copyright">© 2022 Павел Костерин</p>
         </footer>
     </div>
-    <div class="popup">
+    <div class="popup popup_type_profile">
         <div class="popup__container">
-            <button class="popup__button-close"></button>
+            <button class="popup__button-close popup__button-close_type_profile"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <form class="popup__form">
+            <form class="popup__form popup__form_type_profile">
                 <input class="popup__input popup__input_type_name" placeholder="имя" value="#">
                 <input class="popup__input popup__input_type_about" placeholder="о себе" value="#">
-                <button class="popup__save-button" >Сохранить</button>
+                <button class="popup__save-button popup__save-button_type_save">Сохранить</button>
             </form>
         </div>
     </div>
+    <div class="popup popup_type_mesto">
+         <div class="popup__container">
+             <button class="popup__button-close popup__button-close_type_card"></button>
+             <h2 class="popup__title">Новое место</h2>
+             <form class="popup__form popup__form_type_mesto">
+                 <input class="popup__input popup__input_type_name-card" placeholder="Название" value="#">
+                 <input class="popup__input popup__input_type_link-card" placeholder="Ссылка на картинку" value="#">
+                 <button class="popup__save-button popup__save-button_type_add" >Создать</button>
+             </form>
+         </div>
+     </div>
+     <div class="popup popup_type_zoom">
+         <figure class="popup__zoom-container">
+             <button class="popup__button-close popup__button-close_zoom" type="button" aria-label="закрыть"></button>
+             <img class="popup__image" src = "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg" alt = "#">
+             <figcaption class="popup__image-title"></figcaption>
+         </figure>
+     </div>
+
+    <template class="template-card">
+        <li class="elements__item">
+            <img class="elements__image" src="#" alt="img"/>
+            <button class="elements__button-basket"></button>
+            <div class="elements__info">
+                <h2 class="elements__title"></h2>
+                <button class="elements__button-like" type="button" aria-label="нравится"></button>
+            </div>
+        </li>
+    </template>
     <script src="scripts/script.js"></script>
 </body>
