@@ -10,19 +10,18 @@
     position: absolute;
     top: -40px;
     right: -40px;
-    transition: 0.6s linear;
 }
 .popup__button-close:hover {
-
     opacity: .6;
+    transition: 0.6s linear;
 }
 
 @media screen and (max-width: 600px) {
     .popup__button-close {
         width: 20px;
         height: 20px;
-        top: calc(50% - 199px);
-        right: calc(50% - 141px);
+        top: -36px;
+        right: 0;
         background-size: 20px;
     }
 }
