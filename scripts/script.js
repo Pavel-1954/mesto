@@ -39,8 +39,19 @@ const buttonClosePopupCard = popupFormCard.querySelector('.popup__button-close_t
 const formSubmitCard = popupFormCard.querySelector('.popup__form_type_mesto');
 const popupZoomCard = document.querySelector('.popup_type_zoom');
 const buttonCloseZoomPopup = popupZoomCard.querySelector('.popup__button-close_zoom');
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
+// включение валидации вызовом enableValidation
+// все настройки передаются при вызове
 
+const classes = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: 'popup__button_disabled',
+    inputErrorClass: 'popup__input_type_error',
+    errorClass: 'form__input-error_active'
+};
 
 
 
@@ -65,20 +76,35 @@ initialCards.map(function (item){
 })
 
 function openPopup(popup) {
+
     popup.classList.add('popup_opened');
+    const inputList = Array.from(popup.querySelectorAll(classes.inputSelector));
+    const buttonElement = popup.querySelector(classes.submitButtonSelector);
+    if (buttonElement) {
+        toggleButtonState(inputList, buttonElement);
+    }
 }
 
 function closePopup(popup) {
-    popup.classList.remove('popup_opened')
+    const formElement= popup.querySelector(classes.formSelector);
+    const inputList = Array.from(popup.querySelectorAll(classes.inputSelector));
+    if (formElement) {
+        formElement.reset();
+        inputList.forEach((inputElement) => {
+            hideInputError(formElement,inputElement)
+        })
+    }
+        popup.classList.remove('popup_opened');
+
 }
 
-function openProfilePopup(event) {
+function openProfilePopup() {
     popupFormProfile.querySelector('.popup__input_type_name').value = profileName.textContent;
     popupFormProfile.querySelector('.popup__input_type_about').value = profileProfession.textContent;
     openPopup(popupFormProfile);
 }
 
-function closeProfilePopup(event) {
+function closeProfilePopup() {
     closePopup(popupFormProfile);
 }
 
@@ -89,13 +115,13 @@ function popupFormSubmitProfile(event) {
     closePopup(popupFormProfile);
 }
 
-function OpenPopupFormCard(event){
+function OpenPopupFormCard(){
     openPopup(popupFormCard);
     popupFormCard.querySelector('.popup__input_type_name-card').value = '';
     popupFormCard.querySelector('.popup__input_type_link-card').value = '';
 }
 
-function closePopupFormCard(event) {
+function closePopupFormCard() {
     closePopup(popupFormCard);
 }
 
@@ -123,8 +149,30 @@ function increaseCardPopup(event) {
     popupZoomCard.querySelector('.popup__image-title').textContent = event.target.alt
 }
 
-function closeZoomCardPopup(event) {
+function closeZoomCardPopup() {
     closePopup(popupZoomCard)
+}
+
+function addListenersPopups (popupList) {
+
+    popupList.forEach((popupElement) => {
+        popupElement.addEventListener('click', closeByPopup);
+    })
+}
+
+function closeByPopup(event) {
+    if (event.target === event.currentTarget) {
+        closePopup(event.currentTarget)
+    }
+}
+
+function keyEscClosePopup(event) {
+    if (event.key === 'Escape') {
+        closePopup(popupFormProfile);
+        closePopup(popupFormCard);
+        closePopup(popupZoomCard);
+    }
+
 }
 
 buttonOpenPopupProfile.addEventListener('click',openProfilePopup);
@@ -134,3 +182,7 @@ buttonOpenPopupCard.addEventListener('click', OpenPopupFormCard);
 buttonClosePopupCard.addEventListener('click', closePopupFormCard);
 formSubmitCard.addEventListener('submit', addCard);
 buttonCloseZoomPopup.addEventListener('click', closeZoomCardPopup);
+document.addEventListener('keydown',keyEscClosePopup);
+
+
+addListenersPopups(popupList)
